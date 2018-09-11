@@ -8,6 +8,7 @@ $serial = $_POST['sn'];
 $otherSerial =$_POST['pn'];
 $users_id = $_POST['user_id'];
 $locations_id = $_POST['location_id'];
+$entities_id = $_POST['entities_id'];
 
 
 $queryResult =$connect->query("SELECT * FROM glpi_computers where name='$name'");
@@ -23,7 +24,7 @@ if(count($result)!=0){
     echo 'DUPLICATE ID DETECTED';
 }
 else{
-  $queryResult =$connect->query("INSERT INTO glpi_computers(name,serial,otherserial,locations_id,computermodels_id,computertypes_id, users_id) VALUES('$name','$serial','$otherSerial','$locations_id','$computerModels_id','$computerTypes_id','$users_id')");
+  $queryResult =$connect->query("INSERT INTO glpi_computers(name,entities_id,serial,otherserial,locations_id,computermodels_id,computertypes_id, users_id) VALUES('$name','$entities_id','$serial','$otherSerial','$locations_id','$computerModels_id','$computerTypes_id','$users_id')");
 echo 'INPUT SUCCESSFULL';
 }
 
