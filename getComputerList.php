@@ -12,6 +12,7 @@ glpi_computers.otherserial as 'pn',
 upper(glpi_users.name) as 'username', 
 upper(glpi_users.firstname) as 'firstname', 
 upper(glpi_users.realname) as 'lastname',
+glpi_computers.entities_id,
 glpi_entities.name as 'entities_name',
 glpi_locations.name as 'location_name'
 FROM glpi_computers
