@@ -14,7 +14,8 @@ upper(glpi_users.firstname) as 'firstname',
 upper(glpi_users.realname) as 'lastname',
 glpi_computers.entities_id,
 glpi_entities.name as 'entities_name',
-glpi_locations.name as 'location_name'
+glpi_computers.locations_id as 'locations_id',
+glpi_locations.name as 'locations_name'
 FROM glpi_computers
 LEFT JOIN glpi_computermodels ON
 glpi_computers.computermodels_id = glpi_computermodels.id
@@ -26,6 +27,7 @@ LEFT JOIN glpi_entities ON
 glpi_computers.entities_id = glpi_entities.id
 LEFT JOIN glpi_locations on
 glpi_computers.locations_id = glpi_locations.id
+ORDER BY name
 ");
 
 $result=array();
