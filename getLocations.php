@@ -2,7 +2,7 @@
 
 include 'checkConnection.php';
 
-$queryResult =$connect->query("SELECT id, UPPER(name) as name FROM glpi_locations ORDER BY name ASC");
+$queryResult =$connect->query("SELECT id, UPPER(name) as name FROM glpi.glpi_locations ORDER BY name ASC");
 
 $result=array();
 

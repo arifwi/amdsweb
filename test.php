@@ -2,7 +2,7 @@
 
 include 'checkConnection.php';
 
-$queryResult =$connect->query("SELECT max(id)+1 as last_id from glpi_computers");
+$queryResult =$connect->query("SELECT max(id)+1 as last_id from glpi.glpi_computers");
 
 $result=array();
 $a;

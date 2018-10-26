@@ -2,7 +2,7 @@
 
 include 'checkConnection.php';
 
-$queryResult =$connect->query("SELECT id, UPPER(name) as name, UPPER(realname) as lastname, UPPER(firstname) as firstname FROM glpi_users ORDER BY name ASC");
+$queryResult =$connect->query("SELECT id, UPPER(name) as name, UPPER(realname) as lastname, UPPER(firstname) as firstname FROM glpi.glpi_users ORDER BY name ASC");
 
 $result=array();
 

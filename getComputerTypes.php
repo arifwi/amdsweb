@@ -2,7 +2,7 @@
 
 include 'checkConnection.php';
 
-$queryResult =$connect->query("SELECT * FROM glpi_computertypes ORDER BY name ASC");
+$queryResult =$connect->query("SELECT * FROM glpi.glpi_computertypes ORDER BY name ASC");
 
 $result=array();
 

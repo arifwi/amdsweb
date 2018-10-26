@@ -3,7 +3,7 @@
 include 'checkConnection.php';
 
 
-$queryResult =$connect->query("SELECT * FROM glpi_computers");
+$queryResult =$connect->query("SELECT * FROM glpi_computers where name ='id02038'");
 
 $result=array();
 
