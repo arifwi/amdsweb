@@ -1,5 +1,5 @@
 <?php
-$connect = new mysqli("localhost","root","password");
+$connect = new mysqli("localhost","root","root");
 
 if($connect){
 
