@@ -15,7 +15,8 @@ upper(glpi.glpi_users.realname) as 'lastname',
 upper(glpi.glpi_printers.entities_id) as 'entities_id',
 upper(glpi.glpi_entities.name) as 'entities_name',
 upper(glpi.glpi_printers.locations_id) as 'locations_id',
-upper(glpi.glpi_locations.name) as 'locations_name'
+upper(glpi.glpi_locations.name) as 'locations_name',
+upper(glpi.glpi_printers.states_id) as 'states_id'
 FROM glpi.glpi_printers
 LEFT JOIN glpi.glpi_printermodels ON
 glpi.glpi_printers.printermodels_id = glpi.glpi_printermodels.id
