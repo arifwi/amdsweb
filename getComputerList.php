@@ -3,7 +3,11 @@
 include 'checkConnection.php';
 
 
-$queryResult =$connect->query("SELECT upper(glpi.glpi_computers.id) as 'id', upper(glpi.glpi_computers.name) as 'name',upper(glpi.glpi_computers.computermodels_id) as 'model_id',upper(glpi.glpi_computermodels.name) as 'model_name', 
+$queryResult =$connect->query("SELECT 
+upper(glpi.glpi_computers.id) as 'id', 
+upper(glpi.glpi_computers.name) as 'name',
+upper(glpi.glpi_computers.computermodels_id) as 'model_id',
+upper(glpi.glpi_computermodels.name) as 'model_name', 
 upper(glpi.glpi_computers.computertypes_id) as 'type_id',
 upper(glpi.glpi_computertypes.name) as 'type_name',
 upper(glpi.glpi_computers.users_id) 'userid',
@@ -16,7 +20,8 @@ upper(glpi.glpi_computers.entities_id) as 'entities_id',
 upper(glpi.glpi_entities.name) as 'entities_name',
 upper(glpi.glpi_computers.locations_id) as 'locations_id',
 upper(glpi.glpi_locations.name) as 'locations_name',
-upper(glpi.glpi_computers.states_id) as 'states_id'
+upper(glpi.glpi_computers.states_id) as 'states_id',
+upper(glpi.glpi_states.name) as 'states_name'
 FROM glpi.glpi_computers
 LEFT JOIN glpi.glpi_computermodels ON
 glpi.glpi_computers.computermodels_id = glpi.glpi_computermodels.id
@@ -28,6 +33,8 @@ LEFT JOIN glpi.glpi_entities ON
 glpi.glpi_computers.entities_id = glpi.glpi_entities.id
 LEFT JOIN glpi.glpi_locations on
 glpi.glpi_computers.locations_id = glpi.glpi_locations.id
+LEFT JOIN glpi.glpi_states on
+glpi.glpi_computers.states_id = glpi.glpi_states.id
 ORDER BY name
 ");
 
