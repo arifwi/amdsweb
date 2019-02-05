@@ -12,7 +12,7 @@ $appUsername = $_POST['appUsername'];
 $old_value = $_POST['old_value'];
 $new_value = $_POST['new_value'];
 
-$getDeviceId = $connect->query("SELECT id as id FROM glpi.glpi_computers WHERE name ='".$name."' ");
+$getDeviceId = $connect->query("SELECT id as id FROM glpi.$deviceType WHERE name ='".$name."' ");
 
 $last_id;
 
